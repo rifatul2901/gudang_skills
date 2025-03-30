@@ -1,6 +1,5 @@
 :root {
-    --primary: #00509F;
-    --secondary: white;
+    --primary: #003366;
 }
 
 * {
@@ -14,7 +13,6 @@ button,
 input,
 textarea,
 select {
-    font-size: inherit;
     font-family: inherit;
     color: inherit;
     background: none;
@@ -25,7 +23,8 @@ select {
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
-
+    min-height: 330vh;
+    background: linear-gradient(to bottom, #003366, rgb(20, 19, 19))
 }
 
 body::-webkit-scrollbar {
@@ -33,7 +32,7 @@ body::-webkit-scrollbar {
 }
 
 /* ========================================================================================================== */
-
+/* ------------------HEADER------------------------- */
 header {
     display: flex;
     justify-content: space-between;
@@ -43,38 +42,66 @@ header {
     padding: 0 50px;
     background-color: var(--primary);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+    position: relative;
 }
 
-nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    gap: 10rem;
-    font-weight: 300;
-}
 
 a {
     color: white;
     text-decoration: none;
 }
 
-.logo {
-    width: 300px;
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+nav a:hover {
+    color: black;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    width: 25%;
+
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    width: 80px;
     height: 60px;
+}
+
+.logo-container h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    -webkit-text-stroke: 1.4px #000000;
+}
+
+.logo-container span {
+    color:#80c0ff;
 }
 
 .btn-login {
     display: flex;
 }
 
-.btn-registrasi {
+.btn-regis {
     display: flex;
 }
 
 .garis-vertical {
-    width: 2px;
+    width: 3px;
     height: 3rem;
     background-color: black;
 }
@@ -85,26 +112,26 @@ a {
     align-items: center;
     gap: 25px;
     font-size: 1.5rem;
-    width: 300px;
-}
+    width: 25%;
 
+}
+/* ------------------HEADER------------------------- */
+/* ------------------BERANDA------------------------- */
 .bg-gambar {
     opacity: 0.25;
     width: 100%;
     background-size: cover;
 }
 
-main {
+.beranda {
     display: flex;
     justify-content: center;
     text-align: center;
-
-    font-size: 2rem;
-    font-weight: 700;
     min-height: 90vh;
     background-blend-mode: soft-light;
     background: linear-gradient(to bottom, #003366, black), url("../assets/backgorund_beranda.jpg");
     background-size: cover;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
 }
 
 .teks-beranda {
@@ -112,27 +139,196 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
     width: 100%;
-    gap: 100px;
+    gap: 10rem;
+}
+
+.teks-beranda h1 {
+    width: 23ch;
+    animation: typing 2.5s steps(1000) , blink .2s step-end 13 alternate-reverse;
+    white-space: nowrap;
+    overflow: hidden;
+    border-color: transparent; 
+}
+
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+}
+
+@keyframes blink {
+    50% { 
+        border-right: 2px solid black;
+        
+    }
 }
 
 .btn-jelajahi {
-    display: flex; /* Supaya width bisa berfungsi dengan margin auto */
+    display: flex;
+    /* Supaya width bisa berfungsi dengan margin auto */
     justify-content: center;
     text-align: center;
     align-items: center;
     color: white;
     font-size: 1.5rem;
-    width: 16rem; /* Atur lebar tombol */
-    height:4rem;
-    max-width: 300px; /* Batasi lebar maksimal */
+    width: 16rem;
+    /* Atur lebar tombol */
+    height: 4rem;
+    max-width: 300px;
+    /* Batasi lebar maksimal */
     border-radius: 11px;
     cursor: pointer;
-    margin: 20px auto; /* Pusatkan tombol */
+    margin: 20px auto;
+    /* Pusatkan tombol */
     background-color: rgba(0, 51, 102, 0.5);
-    transition: background 0.3s;
+    transition: background .3s;
 }
 
 .btn-jelajahi:hover {
     background-color: rgba(9, 116, 223, 0.7);
+    transition: ease-out .3s;
+}
+/* ------------------BERANDA------------------------- */
+/* --------------------------------------------SECTION SKILL-HOME------------------------------------------------- */
+.skill-home {
+    min-height: 100vh;
+}
+
+.teks-kategori {
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    font-size: 5rem;
+    font-weight: 600;
+    width: max-content;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.scroll-1::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+}
+
+.scroll-1::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #000000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+    margin-top: 10px;
+    padding: 24px;
+    width: 100%;
+    height: 70vh;
+    scroll-snap-type: x mandatory;
+    scroll-padding-top: 24px;
+    border-radius: 8px;
+    gap: 50px;
+}
+
+.card {
+    flex: 0 0 20%;
+    overflow: hidden;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7); /* Tambahkan bayangan */
+}
+
+.card__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Mencegah gambar keluar dari batas */
+    border-radius: 8px;
+}
+
+.card__content img {
+    width: 100%;
+    height: 100%; 
+}
+/* --------------------------------------------SECTION SKILL-HOME------------------------------------------------- */
+
+/* --------------------------------------------SECTION FAVORIT------------------------------------------------- */
+.favorit {
+    min-height: 100vh;
+}
+
+.teks-favorit {
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    font-size: 5rem;
+    font-weight: 600;
+    width: max-content;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 30px;
+    max-width: 90%; /* Batasi lebar agar ada margin kiri-kanan */
+    margin: 0 auto; 
+}
+
+.favorit-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    width: 100%; 
+    height: 40vh; 
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.favorit-content img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+
+/* --------------------------------------------SECTION FAVORIT END------------------------------------------------- */
+
+
+/* --------------------------------------------FOOTER---------------------------------------------------------------- */
+footer {
+    height: 20vh;
+    margin-top: 10vh;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-section {
+    width: 100%;
+    padding: 10px; 
+    margin-top: 25px;
+}
+
+.footer-section h1 {
+    margin-bottom: 10px;
+}
+
+.icon {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    max-width:200px;
 }
