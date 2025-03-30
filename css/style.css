@@ -89,15 +89,73 @@ nav a:hover {
 }
 
 .logo-container span {
-    color:#80c0ff;
+    color: #80c0ff;
 }
 
 .btn-login {
-    display: flex;
+    padding: 12px 24px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    border-radius:8px;
+    transition: .3s;
+    z-index: 1;
+}
+
+.btn-login::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: royalblue;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.btn-login:hover::before {
+    width: 105%;
+}
+
+.btn-login:hover {
+    color: #000000;
 }
 
 .btn-regis {
-    display: flex;
+    padding: 12px 24px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    border-radius:8px;
+    transition: .3s;
+    z-index: 1;
+}
+
+.btn-regis::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(135deg);
+    background: royalblue;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.btn-regis:hover::before {
+    width: 105%;
+}
+
+.btn-regis:hover {
+    color: #000000;
 }
 
 .garis-vertical {
@@ -115,6 +173,7 @@ nav a:hover {
     width: 25%;
 
 }
+
 /* ------------------HEADER------------------------- */
 /* ------------------BERANDA------------------------- */
 .bg-gambar {
@@ -131,7 +190,8 @@ nav a:hover {
     background-blend-mode: soft-light;
     background: linear-gradient(to bottom, #003366, black), url("../assets/backgorund_beranda.jpg");
     background-size: cover;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Tambahkan bayangan */
 }
 
 .teks-beranda {
@@ -147,23 +207,27 @@ nav a:hover {
 
 .teks-beranda h1 {
     width: 23ch;
-    animation: typing 2.5s steps(1000) , blink .2s step-end 13 alternate-reverse;
+    animation: typing 2.5s steps(1000), blink .2s step-end 13 alternate-reverse;
     white-space: nowrap;
     overflow: hidden;
-    border-color: transparent; 
+    border-color: transparent;
 }
 
 
 @keyframes typing {
-    from { 
-        width: 0; 
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 23ch;
     }
 }
 
 @keyframes blink {
-    50% { 
+    50% {
         border-right: 2px solid black;
-        
+
     }
 }
 
@@ -192,6 +256,7 @@ nav a:hover {
     background-color: rgba(9, 116, 223, 0.7);
     transition: ease-out .3s;
 }
+
 /* ------------------BERANDA------------------------- */
 /* --------------------------------------------SECTION SKILL-HOME------------------------------------------------- */
 .skill-home {
@@ -238,7 +303,8 @@ nav a:hover {
     overflow: hidden;
     border-radius: 8px;
     scroll-snap-align: start;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7); /* Tambahkan bayangan */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+    /* Tambahkan bayangan */
 }
 
 .card__content {
@@ -247,14 +313,16 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Mencegah gambar keluar dari batas */
+    overflow: hidden;
+    /* Mencegah gambar keluar dari batas */
     border-radius: 8px;
 }
 
 .card__content img {
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
+
 /* --------------------------------------------SECTION SKILL-HOME------------------------------------------------- */
 
 /* --------------------------------------------SECTION FAVORIT------------------------------------------------- */
@@ -275,10 +343,12 @@ nav a:hover {
 
 .content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 kolom */
     gap: 30px;
-    max-width: 90%; /* Batasi lebar agar ada margin kiri-kanan */
-    margin: 0 auto; 
+    max-width: 90%;
+    /* Batasi lebar agar ada margin kiri-kanan */
+    margin: 0 auto;
 }
 
 .favorit-content {
@@ -286,16 +356,16 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     border: 2px solid black;
-    width: 100%; 
-    height: 40vh; 
+    width: 100%;
+    height: 40vh;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 .favorit-content img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -318,7 +388,7 @@ footer {
 
 .footer-section {
     width: 100%;
-    padding: 10px; 
+    padding: 10px;
     margin-top: 25px;
 }
 
@@ -330,5 +400,5 @@ footer {
     display: flex;
     justify-content: space-around;
     margin: auto;
-    max-width:200px;
+    max-width: 200px;
 }
