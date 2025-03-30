@@ -1,0 +1,138 @@
+:root {
+    --primary: #00509F;
+    --secondary: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* ========================================================================================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    padding: 0 50px;
+    background-color: var(--primary);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    gap: 10rem;
+    font-weight: 300;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    width: 300px;
+    height: 60px;
+}
+
+.btn-login {
+    display: flex;
+}
+
+.btn-registrasi {
+    display: flex;
+}
+
+.garis-vertical {
+    width: 2px;
+    height: 3rem;
+    background-color: black;
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    font-size: 1.5rem;
+    width: 300px;
+}
+
+.bg-gambar {
+    opacity: 0.25;
+    width: 100%;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 2rem;
+    font-weight: 700;
+    min-height: 90vh;
+    background-blend-mode: soft-light;
+    background: linear-gradient(to bottom, #003366, black), url("../assets/backgorund_beranda.jpg");
+    background-size: cover;
+}
+
+.teks-beranda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+}
+
+.btn-jelajahi {
+    display: flex; /* Supaya width bisa berfungsi dengan margin auto */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    width: 16rem; /* Atur lebar tombol */
+    height:4rem;
+    max-width: 300px; /* Batasi lebar maksimal */
+    border-radius: 11px;
+    cursor: pointer;
+    margin: 20px auto; /* Pusatkan tombol */
+    background-color: rgba(0, 51, 102, 0.5);
+    transition: background 0.3s;
+}
+
+.btn-jelajahi:hover {
+    background-color: rgba(9, 116, 223, 0.7);
+}
