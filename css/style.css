@@ -24,7 +24,6 @@ select {
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
-    min-height: 330vh;
     background: linear-gradient(to bottom, #003366, rgb(20, 19, 19))
 }
 
@@ -38,7 +37,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
+    height: 10dvh;
     width: 100%;
     padding: 0 50px;
     background-color: var(--primary);
@@ -80,14 +79,14 @@ nav a:hover {
 
 .logo-container img {
     width: 80px;
-    height: 60px;
+    height: auto;
 }
 
 .logo-container h1 {
     font-size: 2.2rem;
-    font-weight: 800;
     -webkit-text-stroke: 1.4px #000000;
 }
+
 
 .logo-container span {
     color: #80c0ff;
@@ -99,7 +98,7 @@ nav a:hover {
     overflow: hidden;
     background-color: transparent;
     text-align: center;
-    border-radius:8px;
+    border-radius: 8px;
     transition: .3s;
     z-index: 1;
 }
@@ -112,7 +111,7 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
-    background: royalblue;
+    background: white;
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -123,7 +122,8 @@ nav a:hover {
 }
 
 .btn-login:hover {
-    color: #000000;
+    color: #0080ff;
+    font-weight: bold;
 }
 
 .btn-regis {
@@ -132,7 +132,7 @@ nav a:hover {
     overflow: hidden;
     background-color: transparent;
     text-align: center;
-    border-radius:8px;
+    border-radius: 8px;
     transition: .3s;
     z-index: 1;
 }
@@ -145,7 +145,7 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(135deg);
-    background: royalblue;
+    background: white;
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -156,7 +156,8 @@ nav a:hover {
 }
 
 .btn-regis:hover {
-    color: #000000;
+    color: #0080ff;
+    font-weight: bold;
 }
 
 .garis-vertical {
@@ -187,7 +188,7 @@ nav a:hover {
     display: flex;
     justify-content: center;
     text-align: center;
-    min-height: 90vh;
+    min-height: 90dvh;
     background-blend-mode: soft-light;
     background: linear-gradient(to bottom, #003366, black), url("../assets/backgorund_beranda.jpg");
     background-size: cover;
@@ -198,12 +199,12 @@ nav a:hover {
 .teks-beranda {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 3rem;
     font-weight: 700;
     width: 100%;
-    gap: 10rem;
+    padding: 8rem 0;
 }
 
 .teks-beranda h1 {
@@ -234,7 +235,6 @@ nav a:hover {
 
 .btn-jelajahi {
     display: flex;
-    /* Supaya width bisa berfungsi dengan margin auto */
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -261,7 +261,7 @@ nav a:hover {
 /* ------------------BERANDA------------------------- */
 /* --------------------------------------------SECTION SKILL-HOME------------------------------------------------- */
 .skill-home {
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .teks-kategori {
@@ -271,8 +271,9 @@ nav a:hover {
     font-size: 5rem;
     font-weight: 600;
     width: max-content;
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-top: 5dvh;
+    margin-left: 5vw;
+    flex-wrap: wrap;
 }
 
 .scroll-1::-webkit-scrollbar {
@@ -292,7 +293,7 @@ nav a:hover {
     margin-top: 10px;
     padding: 24px;
     width: 100%;
-    height: 70vh;
+    height: 70dvh;
     scroll-snap-type: x mandatory;
     scroll-padding-top: 24px;
     border-radius: 8px;
@@ -305,14 +306,15 @@ nav a:hover {
     border-radius: 8px;
     scroll-snap-align: start;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
-    position: relative; 
+    position: relative;
 }
 
 .card a {
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute; /* Agar <a> mencakup seluruh kartu */
+    position: absolute;
+    /* Agar <a> mencakup seluruh kartu */
     top: 0;
     left: 0;
     z-index: 2;
@@ -330,7 +332,8 @@ nav a:hover {
 }
 
 .card__content a {
-    display: block; /* Agar seluruh area gambar bisa diklik */
+    display: block;
+    /* Agar seluruh area gambar bisa diklik */
 }
 
 .card__content img {
@@ -350,7 +353,8 @@ nav a:hover {
 
 /* --------------------------------------------SECTION FAVORIT------------------------------------------------- */
 .favorit {
-    min-height: 100vh;
+    min-height: 100dvh;
+    
 }
 
 .teks-favorit {
@@ -360,8 +364,7 @@ nav a:hover {
     font-size: 5rem;
     font-weight: 600;
     width: max-content;
-    margin-left: auto;
-    margin-right: 50px;
+    margin: 5dvh 5vw 0 auto;
 }
 
 .content {
@@ -371,7 +374,7 @@ nav a:hover {
     gap: 30px;
     max-width: 90%;
     /* Batasi lebar agar ada margin kiri-kanan */
-    margin: 0 auto;
+    margin: 34px auto;
 }
 
 .favorit-content {
@@ -380,7 +383,7 @@ nav a:hover {
     justify-content: center;
     border: 2px solid black;
     width: 100%;
-    height: 40vh;
+    height: 40dvh;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -397,8 +400,8 @@ nav a:hover {
 
 /* --------------------------------------------FOOTER---------------------------------------------------------------- */
 footer {
-    height: 20vh;
-    margin-top: 10vh;
+    height: 20dvh;
+    margin-top: 10dvh;
     background-color: #222;
     color: white;
     text-align: center;
@@ -424,4 +427,188 @@ footer {
     justify-content: space-around;
     margin: auto;
     max-width: 200px;
+}
+
+/* penyesuaian tampilan sesuai device agar responsif */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo-container {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .beranda {
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-height: 30vh;
+    }
+
+    .teks-beranda {
+        padding: 1rem 0 ;
+    }
+
+    .login-container {
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .garis-vertical {
+        display: none;
+    }
+
+    .btn-login,
+    .btn-regis {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .logo-container img {
+        width: 60px;
+        height: 45px;
+    }
+
+    .teks-beranda {
+        font-size: 1.2rem;
+    }
+    .btn-jelajahi {
+        font-size: 1rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+    .skill-home {
+        min-height: 82dvh;
+    }
+    
+    .teks-favorit {
+        font-size: 50px;
+    }
+
+    .teks-favorit {
+        font-size: 2.5rem;
+    }
+
+    .teks-kategori {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Medium screen: tablet ke bawah */
+@media (max-width: 992px) {
+    .logo-container {
+        width: 30%;
+    }
+
+    .logo-container img {
+        width: 65px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        width: 45%;
+        font-size: 1.3rem;
+    }
+
+    .login-container {
+        width: 25%;
+        font-size: 1.3rem;
+    }
+
+    footer {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-section h1 {
+        font-size: 1.3rem;
+    }
+
+    .icon {
+        max-width: 150px;
+    }
+
+    .teks-beranda {
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* Small screen: smartphone */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo-container img {
+        width: 50px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    nav,
+    .login-container {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        margin-bottom: 10px;
+    }
+
+    .footer-section h1 {
+        font-size: 1.1rem;
+    }
+
+    .icon {
+        max-width: 120px;
+    }
+    .teks-beranda {
+        font-size: 1rem;
+    }
 }

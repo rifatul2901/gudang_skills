@@ -103,7 +103,7 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
-    background: royalblue;
+    background: white;
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -114,7 +114,8 @@ nav a:hover {
 }
 
 .btn-login:hover {
-    color: #000000;
+    color: #0080ff;
+    font-weight: bold;
 }
 
 .btn-regis {
@@ -136,7 +137,7 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(135deg);
-    background: royalblue;
+    background: white;
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -147,7 +148,8 @@ nav a:hover {
 }
 
 .btn-regis:hover {
-    color: #000000;
+    color: #0080ff;
+    font-weight: bold;
 }
 
 .garis-vertical {
@@ -175,13 +177,16 @@ nav a:hover {
 }
 
 .form {
-    display: block;
+    display: flex; /* ubah dari block ke flex */
+    flex-direction: column;
+    justify-content: space-between; /* membuat isi tersebar antara atas dan bawah */
     padding: 1rem;
-    height: 50vh;
+    height: 63vh;
     max-width: 350px;
     border-radius: 0.5rem;
     background-color: #fff;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+        
 }
 
 .form-title {
@@ -198,13 +203,13 @@ nav a:hover {
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    height: 60%;
+    height: auto;
     margin-top: 10px;
 }
 
 .input-container input {
     border: 1px solid #e5e7eb;
-    margin: 15px 0;
+    margin: 10px 0;
     background-color: #fff;
     padding: 1rem;
     padding-right: 3rem;
@@ -217,8 +222,10 @@ nav a:hover {
 
 .form button {
     border: 1px solid #e5e7eb;
-    margin-top: 40px;
-    margin-bottom: 15px;  
+    margin-top: auto;
+    margin-bottom: 10px;  
+    width: 100%;
+    height: 11%;
 }
 
 .submit {
@@ -232,4 +239,204 @@ nav a:hover {
     background-color: #4F46E5;
     color: #ffffff;
     border-radius: 0.5rem;
+    cursor: pointer;
+}
+.error {
+    width: 100%;
+    background-color: #ffe6e6;
+    border-left: 5px solid #ff4d4d;
+    color: #cc0000;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error p {
+    line-height: 1.4;
+}
+
+/* penyesuaian tampilan sesuai device agar responsif */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo-container {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .beranda {
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-height: 30vh;
+    }
+
+    .teks-beranda {
+        padding: 1rem 0 ;
+    }
+
+    .login-container {
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .garis-vertical {
+        display: none;
+    }
+
+    .btn-login,
+    .btn-regis {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .logo-container img {
+        width: 60px;
+        height: 45px;
+    }
+
+    .teks-beranda {
+        font-size: 1.2rem;
+    }
+    .btn-jelajahi {
+        font-size: 1rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+    .skill-home {
+        min-height: 82dvh;
+    }
+    
+    .teks-favorit {
+        font-size: 50px;
+    }
+
+    .teks-favorit {
+        font-size: 2.5rem;
+    }
+
+    .teks-kategori {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Medium screen: tablet ke bawah */
+@media (max-width: 992px) {
+    .logo-container {
+        width: 30%;
+    }
+
+    .logo-container img {
+        width: 65px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        width: 45%;
+        font-size: 1.3rem;
+    }
+
+    .login-container {
+        width: 25%;
+        font-size: 1.3rem;
+    }
+
+    footer {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-section h1 {
+        font-size: 1.3rem;
+    }
+
+    .icon {
+        max-width: 150px;
+    }
+
+    .teks-beranda {
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* Small screen: smartphone */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo-container img {
+        width: 50px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    nav,
+    .login-container {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        margin-bottom: 10px;
+    }
+
+    .footer-section h1 {
+        font-size: 1.1rem;
+    }
+
+    .icon {
+        max-width: 120px;
+    }
+    .teks-beranda {
+        font-size: 1rem;
+    }
 }
