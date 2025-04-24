@@ -400,33 +400,126 @@ nav a:hover {
 
 /* --------------------------------------------FOOTER---------------------------------------------------------------- */
 footer {
-    height: 20dvh;
+    display: flex;
+    height: 30dvh;
     margin-top: 10dvh;
     background-color: #222;
     color: white;
     text-align: center;
 }
+.logo-container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50dvw;
+}
+.logo-container-footer a {
+    display: flex;
+    align-items: center;
+    margin: 3.1rem 0 0 5rem;
+    gap: 10px;
+}
 
-.footer-content {
+.logo-container-footer img {
+    width:100px ;
+    height: auto;
+}
+
+.logo-container-footer h1 {
+    font-size: 2.2rem;
+    -webkit-text-stroke: 1.4px #000000;
+}
+
+.teks-skill {
+    color: #80c0ff;
+}
+
+.logo-container-footer p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem 0 0 5rem;
+    font-size: 1.4rem;
+}
+
+.logo-copy {
+    justify-content: center;
+    font-size: 2rem;
+    margin:0 0.5rem;
+}
+
+.logo-medsos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    height: 7dvh;
+    margin: 1rem 0 0 5rem;
+}
+.logo-medsos svg {
+    cursor: pointer;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.deskripsi {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50dvw;
+    border:1px solid red;
+}
+.about {
+    margin-top: 3.1rem;
+}
+
+.teks-about {
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
-.footer-section {
-    width: 100%;
-    padding: 10px;
-    margin-top: 25px;
-}
-
-.footer-section h1 {
-    margin-bottom: 10px;
-}
-
-.icon {
+.about a {
     display: flex;
-    justify-content: space-around;
-    margin: auto;
-    max-width: 200px;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 100;
+    align-items: center;
+    margin-top: 0.2rem;
+}
+
+.contact {
+    margin-top: 3.1rem;
+}
+
+.teks-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.teks-email {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn-contact {
+    font-size: 1.4rem ;
+    padding: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: rgba(0, 51, 102, 0.5);
+    border-radius:8px;
+    transition: background .3s;
+}
+.btn-contact:hover {
+    background-color: rgba(9, 116, 223, 0.7);
+    transition: ease-out .3s;
 }
 
 /* penyesuaian tampilan sesuai device agar responsif */

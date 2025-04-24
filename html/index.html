@@ -22,7 +22,7 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header>
+    <header id="header">
       <div class="logo-container">
         <a href="#">
           <img src="../assets/logo.png" width="50px" height="60px" alt="logo" />
@@ -46,7 +46,7 @@
     <!-- CONTENT MAIN -->
     <main>
       <!-- BERANDA-->
-      <section class="beranda">
+      <section class="beranda" id="beranda">
         <div class="teks-beranda">
           <h1>
             Tingkatkan Skillmu dengan <br />
@@ -114,22 +114,30 @@
     <!-- CONTENT MAIN END-->
     <!-- FOOTER -->
     <footer>
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h1>Tentang Kami</h1>
-          <p>
-            Website ini menyediakan tutorial terbaik untuk meningkatkan skill
-            Anda.
-          </p>
-          <p>&copy; 2025 Gudang Skill</p>
+      <div class="logo-container-footer">
+        <a href="#header">
+          <img src="../assets/logo.png" width="50px" height="60px" alt="logo" />
+          <h1>Gudang<span class="teks-skill">skill</span></h1>
+        </a>
+        <p>
+          Copyright <span class="logo-copy"> &copy; </span>all rights reserved
+        </p>
+        <div class="logo-medsos">
+          <i data-feather="facebook"></i>
+          <i data-feather="instagram"></i>
         </div>
-        <div class="footer-section social">
-          <h1>Ikuti Kami</h1>
-          <div class="icon">
-            <a href="#"><i data-feather="facebook"></i></a>
-            <a href="#"><i data-feather="instagram"></i></a>
-            <a href="#"><i data-feather="twitter"></i></a>
-          </div>
+      </div>
+      <div class="deskripsi">
+        <div class="about">
+          <p class="teks-about">About</p>
+          <a href="#">Home</a>
+          <a href="#favorit">Favorit</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="contact">
+          <p class="teks-contact">Contact Us</p>
+          <p class="teks-email">gudangskill@gmail.com</p>
+          <button onclick="" class="btn-contact">Contact Us</button>
         </div>
       </div>
     </footer>
