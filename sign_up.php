@@ -20,7 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reg_user'])) {
   }
 
   // Bisa ditambah: cek validitas email, panjang password, dsb.
+  if ($user) {
+    if ($user['username'] === $username) {
+      array_push($errors, "Username already exists");
+    }
 
+    if ($user['email'] === $email) {
+      array_push($errors, "Email already exists");
+    }
+  }
   // Jika tidak ada error, lanjutkan dengan query insert ke database.
 }
 ?>
