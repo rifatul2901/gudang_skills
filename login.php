@@ -1,3 +1,6 @@
+<?php
+?>
+
 <?php include('connectdb.php') ?>
 
 <?
@@ -31,6 +34,8 @@ if (isset($_POST['login_user'])) {
         $_SESSION['email'] = $user['email'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['success'] = "You are now logged in";
+        $_SESSION['user_id'] = $user['id']; // <--- penting untuk menyimpan video berdasarkan user
+
         header('Location: index.php');
         exit();
       } else {

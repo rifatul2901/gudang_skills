@@ -245,8 +245,74 @@ nav a:hover {
     flex-grow: 5;
 }
 
+/*----------- gambar------------ */
+
+/* videography */
+
+#videography-lvl-1 {
+    background-image: url('../assets/video1.jpg');
+}
+
+#videography-lvl-2 {
+    background-image:url('../assets/video2.jpg') ;
+}
+
+#videography-lvl-3 {
+    background-image:url('../assets/video3.jpg') ;
+}
+
+#videography-lvl-4 {
+    background-image:url('../assets/video4.jpg') ;
+}
+
+#videography-lvl-5 {
+    background-image:url('../assets/video5.jpg') ;
+}
+
+/* videography */
+
+/* Drum */
+
+#drum-lvl-1 {
+    background-image:url('../assets/drum1.jpg') ;
+}
+#drum-lvl-2 {
+    background-image:url('../assets/drum2.jpg') ;
+}
+#drum-lvl-3 {
+    background-image:url('../assets/drum3.jpg') ;
+}
+#drum-lvl-4 {
+    background-image: url('../assets/drum4.jpg');
+}
+#drum-lvl-5 {
+    background-image:url('../assets/drum5.jpg') ;
+}
 
 
+/* Drum */
+
+/* Gitar */
+
+#Gitar-lvl-1 {
+    background-image: url('../assets/gitar1.jpg');
+}
+#Gitar-lvl-2 {
+    background-image: url('../assets/gitar5.jpg');
+}
+#Gitar-lvl-3 {
+    background-image: url('../assets/gitar3.jpg');
+}
+#Gitar-lvl-4 {
+    background-image: url('../assets/gitar4.jpg');
+}
+#Gitar-lvl-5 {
+    background-image: url('../assets/gitar2.jpg');
+}
+
+/* Gitar */
+
+/* photography */
 #photography-lvl-1 {
     background-image: url('../assets/photography-lvl-1.jpg');
 }
@@ -267,6 +333,9 @@ nav a:hover {
     background-image: url('../assets/photography-lvl-5.jpg');
 }
 
+
+
+/*----------- gambar------------ */
 
 .image-box {
     flex-grow: 1;
@@ -344,6 +413,48 @@ nav a:hover {
     padding: 4px;
     border-radius: 5px;
 }
+.image-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 8px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.image-box:hover .image-description {
+    opacity: 1;
+}
+.btn-save {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: rgba(0, 128, 255, 0.8);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 3;
+    opacity: 0;
+}
+
+.image-box:hover .btn-save {
+    opacity: 1;
+}
+
+.btn-save:hover {
+    background-color: rgb(0, 77, 153);
+}
+
 
 /* --------------------------------------------FOOTER---------------------------------------------------------------- */
 footer {
@@ -527,7 +638,62 @@ footer {
         width: 60px;
         height: 45px;
     }
+        /* footer */
+        footer {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+    
+        .logo-container-footer {
+            width: 100%;
+            align-items: center;
+        }
+    
+        .logo-container-footer a {
+            justify-content: center;
+            margin: 1rem 0;
+        }
+    
+        .logo-container-footer p {
+            justify-content: center;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+    
+        .logo-medsos {
+            justify-content: center;
+            margin: 1rem 0;
+            gap: 2rem;
+        }
+    
+        .deskripsi {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    
+        .about, .contact {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+    
+        .about a,
+        .contact .btn-contact {
+            justify-content: center;
+        }
+    
+        .btn-contact {
+            margin-left: 0;
+            justify-content: center;
+        }
+        /* footer-end */
 }
+
+
 
 
 /* Medium screen: tablet ke bawah */
@@ -588,4 +754,34 @@ footer {
     nav {
         margin-bottom: 10px;
     }
+        /* footer */
+        .logo-container-footer h1 {
+            font-size: 1.6rem;
+        }
+    
+        .teks-about,
+        .teks-contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+    
+        .about a,
+        .teks-email,
+        .btn-contact {
+            font-size: 1.1rem;
+        }
+    
+        .btn-contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .logo-medsos svg {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        /* footer-end */
 }

@@ -98,6 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reg_user'])) {
       <button type="submit" name="reg_user" class="submit">SIGN UP</button>
     </form>
   </div>
+
 </body>
 
 </html>

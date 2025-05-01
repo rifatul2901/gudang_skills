@@ -618,6 +618,59 @@ footer {
     .container {
         flex-direction: column;
     }
+    /* footer */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .logo-container-footer {
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo-container-footer a {
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    .logo-container-footer p {
+        justify-content: center;
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    .logo-medsos {
+        justify-content: center;
+        margin: 1rem 0;
+        gap: 2rem;
+    }
+
+    .deskripsi {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .about, .contact {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .about a,
+    .contact .btn-contact {
+        justify-content: center;
+    }
+
+    .btn-contact {
+        margin-left: 0;
+        justify-content: center;
+    }
+    /* footer-end */
 }
 
 /* Medium screen: tablet ke bawah */
@@ -641,21 +694,6 @@ footer {
 
     .login-container {
         width: 25%;
-        font-size: 1.3rem;
-    }
-
-    footer {
-        height: auto;
-        padding: 20px 10px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .footer-section h1 {
         font-size: 1.3rem;
     }
 
@@ -702,15 +740,40 @@ footer {
     nav {
         margin-bottom: 10px;
     }
-
-    .footer-section h1 {
-        font-size: 1.1rem;
-    }
-
     .icon {
         max-width: 120px;
     }
     .teks-beranda {
         font-size: 1rem;
     }
+    /* footer */
+    .logo-container-footer h1 {
+        font-size: 1.6rem;
+    }
+
+    .teks-about,
+    .teks-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .about a,
+    .teks-email,
+    .btn-contact {
+        font-size: 1.1rem;
+    }
+
+    .btn-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-medsos svg {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    /* footer-end */
 }

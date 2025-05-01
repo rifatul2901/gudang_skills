@@ -381,21 +381,6 @@ nav a:hover {
         font-size: 1.3rem;
     }
 
-    footer {
-        height: auto;
-        padding: 20px 10px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .footer-section h1 {
-        font-size: 1.3rem;
-    }
-
     .icon {
         max-width: 150px;
     }
@@ -438,10 +423,6 @@ nav a:hover {
 
     nav {
         margin-bottom: 10px;
-    }
-
-    .footer-section h1 {
-        font-size: 1.1rem;
     }
 
     .icon {
