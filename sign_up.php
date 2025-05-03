@@ -1,37 +1,46 @@
-<?php include('connectdb.php') ?> <!-- Include koneksi dan logic -->
-
 <?php
-// Misalnya, logika untuk validasi form atau inisialisasi variabel
+session_start();
+include('connectdb.php');
+
+// Inisialisasi variabel
 $errors = [];
 $username = "";
 $email = "";
 
-// Contoh logika registrasi
+// Proses registrasi
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reg_user'])) {
-  $username = $_POST['username'];
-  $email = $_POST['email'];
-  $password_1 = $_POST['password_1'];
-  $password_2 = $_POST['password_2'];
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+  $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
-  if (empty($username) || empty($email) || empty($password_1) || empty($password_2)) {
-    $errors[] = "All fields are required.";
-  } elseif ($password_1 !== $password_2) {
-    $errors[] = "Passwords do not match.";
-  }
+  // Validasi form
+  if (empty($username)) $errors[] = "Username is required";
+  if (empty($email)) $errors[] = "Email is required";
+  if (empty($password_1)) $errors[] = "Password is required";
+  if ($password_1 != $password_2) $errors[] = "Passwords do not match";
 
-  // Bisa ditambah: cek validitas email, panjang password, dsb.
+  // Cek duplikat
+  $query = "SELECT * FROM user WHERE username='$username' OR email='$email' LIMIT 1";
+  $result = mysqli_query($db, $query);
+  $user = mysqli_fetch_assoc($result);
+
   if ($user) {
-    if ($user['username'] === $username) {
-      array_push($errors, "Username already exists");
-    }
-
-    if ($user['email'] === $email) {
-      array_push($errors, "Email already exists");
-    }
+    if ($user['username'] === $username) $errors[] = "Username already exists";
+    if ($user['email'] === $email) $errors[] = "Email already exists";
   }
-  // Jika tidak ada error, lanjutkan dengan query insert ke database.
+
+  // Simpan user
+  if (count($errors) == 0) {
+    $password = md5($password_1);
+    $query = "INSERT INTO user (username, email, password) VALUES('$username', '$email', '$password')";
+    mysqli_query($db, $query);
+    header('location: login.php');
+    exit();
+  }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

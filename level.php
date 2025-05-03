@@ -1,24 +1,24 @@
 <?php
-// if (!isset($_SESSION['user_id'])) {
-//     // Redirect jika belum login
-//     header('Location: login.php');
-//     exit();
-// }
+session_start();
+if (!isset($_SESSION['user_id'])) {
 
-// $db = mysqli_connect('localhost', 'root', '', 'gudang_skil');
+    exit();
+}
 
-// if (isset($_POST['simpan'])) {
-//     $level = mysqli_real_escape_string($db, $_POST['level']);
-//     $user_id = $_SESSION['user_id'];
+$db = mysqli_connect('localhost', 'root', '', 'gudang_skil');
 
-//     $query = "INSERT INTO progress (user_id, level) VALUES ('$user_id', '$level')";
-//     if (mysqli_query($db, $query)) {
-//         echo "<script>alert('Progress berhasil disimpan!'); window.location.href='video.php';</script>";
-//     } else {
-//         echo "<script>alert('Gagal menyimpan progress'); window.location.href='video.php';</script>";
-//     }
-// }
-// ?>
+if (isset($_POST['simpan'])) {
+    $level = mysqli_real_escape_string($db, $_POST['level']);
+    $user_id = $_SESSION['user_id'];
+
+    $query = "INSERT INTO progress (user_id, level) VALUES ('$user_id', '$level')";
+    if (mysqli_query($db, $query)) {
+        echo "<script>alert('Progress berhasil disimpan!'); window.location.href='video.php';</script>";
+    } else {
+        echo "<script>alert('Gagal menyimpan progress'); window.location.href='video.php';</script>";
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,9 +60,17 @@
         </nav>
         <!-- NAVBAR END -->
         <div class="login-container">
-            <a href="login.php" class="btn-login">Login</a>
-            <div class="garis-vertical"></div>
-            <a href="sign_up.php" class="btn-regis">Sign Up</a>
+            <?php if (isset($_SESSION['email'])): ?>
+                <span style="margin-right: 10px;">
+                    Hi, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : htmlspecialchars($_SESSION['email']); ?>
+                </span>
+                <div class="garis-vertical"></div>
+                <a href="logout.php" class="btn-login">Logout</a>
+            <?php else: ?>
+                <a href="login.php" class="btn-login">Login</a>
+                <div class="garis-vertical"></div>
+                <a href="sign_up.php" class="btn-regis">Sign Up</a>
+            <?php endif; ?>
         </div>
     </header>
     <!--HEADER END -->

@@ -1,17 +1,15 @@
 <?php
-?>
+session_start();
+include('connectdb.php'); // Pastikan variabel koneksi bernama $db atau sesuaikan di bawah
 
-<?php include('connectdb.php') ?>
-
-<?
-// Inisialisasi array untuk error
 $errors = [];
 
 if (isset($_POST['login_user'])) {
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $password = mysqli_real_escape_string($conn, $_POST['password']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $password = md5(mysqli_real_escape_string($db, $_POST['password']));
 
-  // Validasi input
+
+  // Validasi form
   if (empty($email)) {
     $errors[] = "Email harus diisi";
   }
@@ -19,22 +17,20 @@ if (isset($_POST['login_user'])) {
     $errors[] = "Password harus diisi";
   }
 
+  // Jika validasi lolos, cek user di database
   if (count($errors) === 0) {
     $query = "SELECT * FROM user WHERE email='$email' LIMIT 1";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($db, $query);
 
     if ($result && mysqli_num_rows($result) === 1) {
       $user = mysqli_fetch_assoc($result);
 
-      // Gunakan password_verify jika sudah menggunakan password_hash
-      // if (password_verify($password, $user['password'])) {
-
-      // Untuk sementara pakai perbandingan biasa
+      // Karena tidak pakai password_hash, cocokkan langsung
       if ($password === $user['password']) {
         $_SESSION['email'] = $user['email'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['user_id'] = $user['id'];
         $_SESSION['success'] = "You are now logged in";
-        $_SESSION['user_id'] = $user['id']; // <--- penting untuk menyimpan video berdasarkan user
 
         header('Location: index.php');
         exit();
