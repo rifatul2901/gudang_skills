@@ -1,21 +1,24 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
+include('connectdb.php');
 
-    exit();
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_video'])) {
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit();
+    }
 
-$db = mysqli_connect('localhost', 'root', '', 'gudang_skil');
-
-if (isset($_POST['simpan'])) {
-    $level = mysqli_real_escape_string($db, $_POST['level']);
     $user_id = $_SESSION['user_id'];
+    $video_url = $_POST['video_url'];
+    $thumbnail = $_POST['thumbnail'];
 
-    $query = "INSERT INTO progress (user_id, level) VALUES ('$user_id', '$level')";
-    if (mysqli_query($db, $query)) {
-        echo "<script>alert('Progress berhasil disimpan!'); window.location.href='video.php';</script>";
+    // Cek apakah sudah disimpan sebelumnya
+    $check = mysqli_query($db, "SELECT * FROM progress WHERE user_id='$user_id' AND video_url='$video_url'");
+    if (mysqli_num_rows($check) == 0) {
+        mysqli_query($db, "INSERT INTO progress (user_id, video_url, thumbnail) VALUES ('$user_id', '$video_url', '$thumbnail')");
+        echo "<script>alert('Video berhasil disimpan ke favorit!');</script>";
     } else {
-        echo "<script>alert('Gagal menyimpan progress'); window.location.href='video.php';</script>";
+        echo "<script>alert('Video sudah disimpan sebelumnya.');</script>";
     }
 }
 ?>
@@ -95,8 +98,9 @@ if (isset($_POST['simpan'])) {
                         ligula in efficitur.
                     </div>
                     <form method="POST" action="level.php">
-                        <input type="hidden" name="level" value="Level 1">
-                        <button type="submit" name="simpan" class="btn-save" onclick="event.stopPropagation();">
+                        <input type="hidden" name="video_url" value="https://www.youtube.com/embed/-wuGs3zqeUY?si=cFpVFa8YIw50Reds">
+                        <input type="hidden" name="thumbnail" value="assets/video1.jpg">
+                        <button type="submit" name="save_video" class="btn-save" onclick="event.stopPropagation();">
                             Simpan
                         </button>
                     </form>

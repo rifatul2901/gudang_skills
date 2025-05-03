@@ -1,5 +1,17 @@
 <?php
+include('connectdb.php');
 session_start();
+
+$user_id = $_SESSION['user_id'] ?? null;
+$favorit_videos = [];
+
+if ($user_id) {
+    $query = "SELECT * FROM progress WHERE user_id = $user_id ORDER BY created_at DESC";
+    $result = mysqli_query($db, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $favorit_videos[] = $row;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,18 +121,25 @@ session_start();
     <!-- SKILL HOME END -->
     <!-- FAVORIT -->
     <section id="favorit" class="favorit">
-      <div class="teks-favorit">Favorit</div>
-      <div>
+    <div class="teks-favorit">Favorit</div>
+    <div>
         <div class="content">
-          <div class="favorit-content">
-            <img src="assets/kategori2.jpg" alt="" />
-          </div>
-          <div class="favorit-content"></div>
-          <div class="favorit-content"></div>
-          <div class="favorit-content"></div>
+            <?php if (count($favorit_videos) > 0): ?>
+                <?php foreach ($favorit_videos as $video): ?>
+                    <div class="favorit-content">
+                        <a href="<?= htmlspecialchars($video['video_url']) ?>" target="_blank">
+                            <img src="<?= htmlspecialchars($video['thumbnail']) ?>" alt="Thumbnail" />
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="favorit-content" style="grid-column: span 2; text-align: center;">
+                    Belum ada video favorit disimpan.
+                </div>
+            <?php endif; ?>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
     <!-- FAVORIT END -->
   </main>
   <!-- CONTENT MAIN END-->
@@ -163,7 +182,7 @@ session_start();
     feather.replace();
   </script>
   <!-- script  -->
-  <script src="java.js" />
+  <script src="js/java.js" />
 </body>
 
 </html>
