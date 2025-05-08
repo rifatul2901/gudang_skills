@@ -368,30 +368,25 @@ nav a:hover {
 }
 
 .content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 kolom */
-    gap: 30px;
-    max-width: 90%;
-    /* Batasi lebar agar ada margin kiri-kanan */
-    margin: 34px auto;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 
 .favorit-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    width: 100%;
-    height: 40dvh;
-    font-size: 1.5rem;
-    font-weight: bold;
+  flex-grow: 1;
+  flex-basis: 100;
 }
 
 .favorit-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  height: 40dvh;
+  width: 50dvh;
+  margin-bottom: 0.5rem;
+  margin-left: 5px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 115px rgba(0, 0, 0, 0.7);
 }
 
 

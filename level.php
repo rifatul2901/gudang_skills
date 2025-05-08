@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_video'])) {
                         ligula in efficitur.
                     </div>
                     <form method="POST" action="level.php">
-                        <input type="hidden" name="video_url" value="https://www.youtube.com/embed/-wuGs3zqeUY?si=cFpVFa8YIw50Reds">
+                        <input type="hidden" name="video_url" value="video.php">
                         <input type="hidden" name="thumbnail" value="assets/video1.jpg">
                         <button type="submit" name="save_video" class="btn-save" onclick="event.stopPropagation();">
                             Simpan
@@ -116,7 +116,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_video'])) {
                         Morbi et metus in est interdum hendrerit. Vestibulum convallis ac
                         ligula in efficitur.
                     </div>
-                    <button class="btn-save">Simpan</button>
+                    <form method="POST" action="level.php">
+                        <input type="hidden" name="video_url" value="video_2.php">
+                        <input type="hidden" name="thumbnail" value="assets/video2.jpg">
+                        <button type="submit" name="save_video" class="btn-save" onclick="event.stopPropagation();">
+                            Simpan
+                        </button>
+                    </form>
                 </div>
                 <div class="image-box" id="videography-lvl-3">
                     <p>Level 3</p>
@@ -129,7 +135,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_video'])) {
                         Morbi et metus in est interdum hendrerit. Vestibulum convallis ac
                         ligula in efficitur.
                     </div>
-                    <button class="btn-save">Simpan</button>
+                    <form method="POST" action="level.php">
+                        <input type="hidden" name="video_url" value="video_3.php">
+                        <input type="hidden" name="thumbnail" value="assets/video3.jpg">
+                        <button type="submit" name="save_video" class="btn-save" onclick="event.stopPropagation();">
+                            Simpan
+                        </button>
+                    </form>
                 </div>
                 <div class="image-box" id="videography-lvl-4">
                     <p>Level 4</p>
@@ -142,7 +154,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_video'])) {
                         Morbi et metus in est interdum hendrerit. Vestibulum convallis ac
                         ligula in efficitur.
                     </div>
-                    <button class="btn-save">Simpan</button>
+                    <form method="POST" action="level.php">
+                        <input type="hidden" name="video_url" value="video_4.php">
+                        <input type="hidden" name="thumbnail" value="assets/video4.jpg">
+                        <button type="submit" name="save_video" class="btn-save" onclick="event.stopPropagation();">
+                            Simpan
+                        </button>
+                    </form>
                 </div>
                 <div class="image-box" id="videography-lvl-5">
                     <p>Level 5</p>
@@ -155,7 +173,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_video'])) {
                         Morbi et metus in est interdum hendrerit. Vestibulum convallis ac
                         ligula in efficitur.
                     </div>
-                    <button class="btn-save">Simpan</button>
+                    <form method="POST" action="level.php">
+                        <input type="hidden" name="video_url" value="video_5.php">
+                        <input type="hidden" name="thumbnail" value="assets/video5.jpg">
+                        <button type="submit" name="save_video" class="btn-save" onclick="event.stopPropagation();">
+                            Simpan
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
