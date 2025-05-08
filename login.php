@@ -5,12 +5,12 @@ include('connectdb.php'); // Pastikan variabel koneksi bernama $db atau sesuaika
 $errors = [];
 
 if (isset($_POST['login_user'])) {
-  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = md5(mysqli_real_escape_string($db, $_POST['password']));
 
 
   // Validasi form
-  if (empty($email)) {
+  if (empty($username)) {
     $errors[] = "Email harus diisi";
   }
   if (empty($password)) {
@@ -19,7 +19,7 @@ if (isset($_POST['login_user'])) {
 
   // Jika validasi lolos, cek user di database
   if (count($errors) === 0) {
-    $query = "SELECT * FROM user WHERE email='$email' LIMIT 1";
+    $query = "SELECT * FROM user WHERE username='$username' LIMIT 1";
     $result = mysqli_query($db, $query);
 
     if ($result && mysqli_num_rows($result) === 1) {
@@ -101,7 +101,7 @@ if (isset($_POST['login_user'])) {
 
 
       <div class="input-container">
-        <input type="email" name="email" placeholder="Enter email" required />
+        <input type="username" name="username" placeholder="Enter username" required />
         <input type="password" name="password" placeholder="Enter password" required />
       </div>
 
